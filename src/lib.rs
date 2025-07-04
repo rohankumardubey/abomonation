@@ -319,7 +319,7 @@ impl<T: Abomonation> Abomonation for std::ops::Range<T> {
         Some(bytes)
     }
     #[inline] fn extent(&self) -> usize {
-        self.start.extent() << 1
+        self.start.extent() + self.end.extent()
     }
 }
 
