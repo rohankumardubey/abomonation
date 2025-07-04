@@ -32,6 +32,16 @@ use abomonation::*;
 #[test] fn test_vec_u_s_size() { _test_size(vec![vec![(0u64, format!("grawwwwrr!")); 32]; 32]); }
 
 #[test]
+fn test_range_string_pass() {
+    _test_pass(String::from("a")..String::from("abc"));
+}
+
+#[test]
+fn test_range_string_size() {
+    _test_size(String::from("a")..String::from("abc"));
+}
+
+#[test]
 fn test_phantom_data_for_non_abomonatable_type() {
     use std::marker::PhantomData;
     struct NotAbomonatable;
